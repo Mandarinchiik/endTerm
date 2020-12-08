@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Register</title>
+<%- include('layouts/header'); -%>
+
+<body>
+
+    <%- include('layouts/navbar'); -%>
+
+    <!-- Main -->
+    <section id="main" class="wrapper style1">
+        <header class="major">
+            <h2>Регистрация</h2>
+            <p>Пожалуйста введите имя и пароль для входа</p>
+        </header>
+        <div class="container">
+
+            <!-- Content -->
+            <section id="content">
+                <% if(errors != null && errors.length > 0){ %>
+                <ul class="errorList"></ul>
+                <!-- loop through each error -->
+                <% for (var i = 0; i < errors.length; i++) { %>
+                <li class="error"><%= errors[i] %></li> <!-- make error red -->
+                <% } %>
+                </ul>
+                <% } %>
+                <form action="/users/register" method="POST" enctype="multipart/form-data">
+                    <label>User Name</label>
+                    <input type="text" class="form-control" placeholder="User Name" name="username" value="<%= username %>">
+                    <label>Password</label>
+                    <input type="password" class="form-control" placeholder="Password" name="password" value="<%= password %>">
+                    <br>
+                    <button type="submit" class="submitinput">Регистрация</button>
+                </form>
+        </div>
+    </section>
+
+
+    <%- include('layouts/footer'); -%>
+
+</body>
+
+</html>

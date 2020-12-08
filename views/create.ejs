@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Create post</title>
+<%- include('layouts/header'); -%>
+
+<body>
+
+    <%- include('layouts/navbar'); -%>
+    
+    <section id="main" class="wrapper style1">
+        <header class="major">
+            <h2>Новый пост</h2>
+            <p></p>
+        </header>
+        <div class="container">
+
+            <!-- Content -->
+            <section id="content">
+                <!-- for browser to know tha tthe form contains mutli media. will encripy multie media and send to server -->
+                <form action="/posts/store" method="POST" enctype="multipart/form-data">
+                    <label>Заголовок</label>
+                    <input type="text" class="form-control" placeholder="Title" id="title" name="title">
+                    <label>Описание</label>
+                    <textarea id="body" name="body" class="form-control"></textarea>
+                    <script>
+                        $('#body').summernote({
+                            placeholder: 'Hello bootstrap 4',
+                            tabsize: 2,
+                            height: 200
+                        });
+                    </script>
+                    <label>Картинка</label>
+                    <input type="file" class="form-control" id="image" name="image">
+                    <br>
+                    <button type="submit" class="submitinput" id="sendMessageButton">Отправить</button>
+                </form>
+
+            </section>
+        </div>
+    </section>
+
+    <%- include('layouts/footer'); -%>
+</body>
+
+</html>

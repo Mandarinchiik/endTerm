@@ -1,0 +1,27 @@
+  <!-- Navigation -->
+  <header id="header" class="skel-layers-fixed">
+      <h1><a href="/">Almaty Longboarding Club</a></h1>
+      <nav id="nav">
+          <ul>
+              <% if(loggedIn) { %>
+              <li><a href="/posts/new">Новый пост</a></li>
+              <li><a href="/auth/logout">Выйти</a></li>
+              <% } %>
+              <% if(!loggedIn) { %>
+              <li><a href="/auth/register">Регистрация</a></li>
+              <li><a href="/auth/login">Вход</a></li>
+              <% } %>
+              <li>
+                  <a href="" class="icon fa-angle-down">Меню</a>
+                  <ul>
+                      <li><a href="/faq">FAQ</a></li>
+                      <li><a href="/about_us">О нас</a></li>
+                      <li><a href="/inform">О лонгбординге</a></li>
+                      <% if(loggedIn) { %>
+                      <li><a href="/shop">Магазин</a></li>
+                      <% } %>
+                  </ul>
+              </li>
+          </ul>
+      </nav>
+  </header>

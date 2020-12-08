@@ -1,0 +1,224 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<title>Shop</title>
+<%- include('layouts/header'); -%>
+
+<script>
+        //Функция показа Shopping cart
+        function shop_show(state) {
+            document.getElementById('shopping_cart').style.display = state;
+            document.getElementById('shopfogging').style.display = state;
+        }
+    </script>
+    <script>
+        function add_to_cart(p) {
+            switch (p) {
+                case 100:
+                    // code block
+                    document.getElementById('cart_form').insertAdjacentHTML("beforeend", '<div id="100" class="product"><strong>Здесь пишется название товара</strong> <a class="icon fa-minus" onclick=""></a> 1 <a class="icon fa-plus" onclick=""></a> <img class="close" src="css/images/close.png" align="right" alt="" onclick="remove_from_cart(100)"> </div>');
+                    break;
+                case 101:
+                    // code block
+                    document.getElementById('cart_form').insertAdjacentHTML("beforeend", '<div id="101" class="product"><strong>Здесь пишется название товара</strong><a class="icon fa-minus" onclick=""></a> 1 <a class="icon fa-plus" onclick=""></a> <img class="close" src="css/images/close.png" align="right" alt="" onclick="remove_from_cart(101)"> </div>');
+                    break;
+                case 102:
+                    // code block
+                    document.getElementById('cart_form').insertAdjacentHTML("beforeend", '<div id="102" class="product"><strong>Здесь пишется название товара</strong><a class="icon fa-minus" onclick=""></a> 1 <a class="icon fa-plus" onclick=""></a> <img class="close" src="css/images/close.png" align="right" alt="" onclick="remove_from_cart(102)"> </div>');
+                    break;
+                case 103:
+                    // code block
+                    document.getElementById('cart_form').insertAdjacentHTML("beforeend", '<div id="103" class="product"><strong>Здесь пишется название товара</strong><a class="icon fa-minus" onclick=""></a> 1 <a class="icon fa-plus" onclick=""></a> <img class="close" src="css/images/close.png" align="right" alt="" onclick="remove_from_cart(103)"> </div>');
+                    break;
+                case 104:
+                    // code block
+                    document.getElementById('cart_form').insertAdjacentHTML("beforeend", '<div id="104" class="product"><strong>Здесь пишется название товара</strong><a class="icon fa-minus" onclick=""></a> 1 <a class="icon fa-plus" onclick=""></a> <img class="close" src="css/images/close.png" align="right" alt="" onclick="remove_from_cart(104)"> </div>');
+                    break;
+                case 105:
+                    // code block
+                    document.getElementById('cart_form').insertAdjacentHTML("beforeend", '<div id="105" class="product"><strong>Здесь пишется название товара</strong><a class="icon fa-minus" onclick=""></a> 1 <a class="icon fa-plus" onclick=""></a> <img class="close" src="css/images/close.png" align="right" alt="" onclick="remove_from_cart(105)"> </div>');
+                    break;
+                case 106:
+                    // code block
+                    document.getElementById('cart_form').insertAdjacentHTML("beforeend", '<div id="106" class="product"><strong>Здесь пишется название товара</strong><a class="icon fa-minus" onclick=""></a> 1 <a class="icon fa-plus" onclick=""></a> <img class="close" src="css/images/close.png" align="right" alt="" onclick="remove_from_cart(106)"> </div>');
+                    break;
+                case 107:
+                    // code block
+                    document.getElementById('cart_form').insertAdjacentHTML("beforeend", '<div id="107" class="product"><strong>Здесь пишется название товара</strong><a class="icon fa-minus" onclick=""></a> 1 <a class="icon fa-plus" onclick=""></a> <img class="close" src="css/images/close.png" align="right" alt="" onclick="remove_from_cart(107)"> </div>');
+                    break;
+                case 108:
+                    // code block
+                    document.getElementById('cart_form').insertAdjacentHTML("beforeend", '<div id="108" class="product"><strong>Здесь пишется название товара</strong><a class="icon fa-minus" onclick=""></a> 1 <a class="icon fa-plus" onclick=""></a> <img class="close" src="css/images/close.png" align="right" alt="" onclick="remove_from_cart(108)"> </div>');
+                    break;
+                default:
+                    // code block
+                    div_cart.innerHTML = "Something go wrong";
+            }
+
+        }
+    </script>
+    <script>
+        function remove_from_cart(p) {
+            document.getElementById(p).remove(p);
+        }
+    </script>
+
+<body>
+
+    <%- include('layouts/navbar'); -%>
+    
+        <div onclick="shop_show('none')" id="shopfogging"></div>
+
+        <div id="shopping_cart">
+            <img class="close" src="css/images/close.png" alt="" onclick="shop_show('none')"> <!-- Close button -->
+            <div id="cart_form">
+                <h2>Корзина</h2>
+
+            </div>
+            <input type="submit" value="Оплатить" name="sab" onclick="shop_show('none')" class="submitinput">
+        </div>
+        <!-- Main -->
+        <section id="main" class="wrapper style1">
+            <header class="major">
+                <h2>Shop</h2>
+                <p>Тут вы можете купить разный стафф.</p>
+            </header>
+            <div class="container">
+
+                <!-- Content -->
+                <div id="section">
+                    <div id="section_img">
+                        <img src="images/Shop1.jpg" width="190" height="190" alt="" />
+                    </div>
+                    <div id="section_name">
+                        <h2>Название товара</h2>
+                    </div>
+                    <div id="section_description">
+                        <h1>Здесь будет информация о товаре и его описание</h1>
+                    </div>
+                    <div id="add_to_cart">
+                        <input type="button" value="Добавить в корзину" name="sab" onclick="add_to_cart(100);" class="button">
+                    </div>
+                </div>
+                <div id="section">
+                    <div id="section_img">
+                        <img src="images/Shop1.jpg" width="190" height="190" alt="" />
+                    </div>
+                    <div id="section_name">
+                        <h2>Название товара</h2>
+                    </div>
+                    <div id="section_description">
+                        <h1>Здесь будет информация о товаре и его описание</h1>
+                    </div>
+                    <div id="add_to_cart">
+                        <input type="button" value="Добавить в корзину" name="sab" onclick="add_to_cart(101);" class="button">
+                    </div>
+                </div>
+                <div id="section">
+                    <div id="section_img">
+                        <img src="images/Shop1.jpg" width="190" height="190" alt="" />
+                    </div>
+                    <div id="section_name">
+                        <h2>Название товара</h2>
+                    </div>
+                    <div id="section_description">
+                        <h1>Здесь будет информация о товаре и его описание</h1>
+                    </div>
+                    <div id="add_to_cart">
+                        <input type="button" value="Добавить в корзину" name="sab" onclick="add_to_cart(102);" class="button">
+                    </div>
+                </div>
+                <div id="section">
+                    <div id="section_img">
+                        <img src="images/Shop1.jpg" width="190" height="190" alt="" />
+                    </div>
+                    <div id="section_name">
+                        <h2>Название товара</h2>
+                    </div>
+                    <div id="section_description">
+                        <h1>Здесь будет информация о товаре и его описание</h1>
+                    </div>
+                    <div id="add_to_cart">
+                        <input type="button" value="Добавить в корзину" name="sab" onclick="add_to_cart(103);" class="button">
+                    </div>
+                </div>
+                <div id="section">
+                    <div id="section_img">
+                        <img src="images/Shop1.jpg" width="190" height="190" alt="" />
+                    </div>
+                    <div id="section_name">
+                        <h2>Название товара</h2>
+                    </div>
+                    <div id="section_description">
+                        <h1>Здесь будет информация о товаре и его описание</h1>
+                    </div>
+                    <div id="add_to_cart">
+                        <input type="button" value="Добавить в корзину" name="sab" onclick="add_to_cart(104);" class="button">
+                    </div>
+                </div>
+                <div id="section">
+                    <div id="section_img">
+                        <img src="images/Shop1.jpg" width="190" height="190" alt="" />
+                    </div>
+                    <div id="section_name">
+                        <h2>Название товара</h2>
+                    </div>
+                    <div id="section_description">
+                        <h1>Здесь будет информация о товаре и его описание</h1>
+                    </div>
+                    <div id="add_to_cart">
+                        <input type="button" value="Добавить в корзину" name="sab" onclick="add_to_cart(105);" class="button">
+                    </div>
+                </div>
+                <div id="section">
+                    <div id="section_img">
+                        <img src="images/Shop1.jpg" width="190" height="190" alt="" />
+                    </div>
+                    <div id="section_name">
+                        <h2>Название товара</h2>
+                    </div>
+                    <div id="section_description">
+                        <h1>Здесь будет информация о товаре и его описание</h1>
+                    </div>
+                    <div id="add_to_cart">
+                        <input type="button" value="Добавить в корзину" name="sab" onclick="add_to_cart(106);" class="button">
+                    </div>
+                </div>
+                <div id="section">
+                    <div id="section_img">
+                        <img src="images/Shop1.jpg" width="190" height="190" alt="" />
+                    </div>
+                    <div id="section_name">
+                        <h2>Название товара</h2>
+                    </div>
+                    <div id="section_description">
+                        <h1>Здесь будет информация о товаре и его описание</h1>
+                    </div>
+                    <div id="add_to_cart">
+                        <input type="button" value="Добавить в корзину" name="sab" onclick="add_to_cart(107);" class="button">
+                    </div>
+                </div>
+                <div id="section">
+                    <div id="section_img">
+                        <img src="images/Shop1.jpg" width="190" height="190" alt="" />
+                    </div>
+                    <div id="section_name">
+                        <h2>Название товара</h2>
+                    </div>
+                    <div id="section_description">
+                        <h1>Здесь будет информация о товаре и его описание</h1>
+                    </div>
+                    <div id="add_to_cart">
+                        <input type="button" value="Добавить в корзину" name="sab" onclick="add_to_cart(108);" class="button">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <%- include('layouts/footer'); -%>
+
+    </body>
+
+</html>

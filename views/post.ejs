@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Post</title>
+<%- include('layouts/header'); -%>
+
+<body class="landing">
+
+    <%- include('layouts/mainPage_navbar'); -%>
+
+    <section id="postImage" style="background-image: url('<%= blogpost.image %>')">
+        <div class="inner">
+            <div class="container">
+                <div class="post-heading">
+                    <h1 class="title"><%- blogpost.title %></h1>
+                    <h2 class="subheading"><%- blogpost.body %></h2>
+                    <span class="meta">Posted by
+                        <a href="#"><%= blogpost.userid.username %></a>
+                        on <%- blogpost.datePosted.toDateString() %></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Post Content -->
+    <article>
+        <div class="container">
+            <section id="content">
+                <div class="postBody">
+                    <%- blogpost.body %>
+                </div>
+            </section>
+        </div>
+    </article>
+    <%- include('layouts/footer'); -%>
+
+</body>
+
+</html>

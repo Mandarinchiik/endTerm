@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<%- include('layouts/header'); -%>
+
+<head>
+    <title>ALC Главная</title>
+</head>
+
+<body class="landing">
+
+    <!-- Header -->
+    <%- include('layouts/mainPage_navbar'); -%>
+
+    <!-- Banner -->
+    <section id="banner" >
+        <div class="inner">
+            <h2> </h2><!-- Almaty Longboarding Club -->
+            <p> </p> <!-- Самый лучший клуб лонгбординга в Алмате!-->
+            <ul class="actions">
+                <li><a href="/about_us" class="button big scrolly">Подробнее</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- One -->
+    <section id="one" class="wrapper style1">
+        <div class="container">
+            <header class="major">
+                <h2>Главная страница</h2>
+                <p>"Ride or die"</p>
+            </header>
+            <div class="slider">
+                <span class="nav-previous"></span>
+                <div class="viewer">
+                    <div class="reel">
+                        <div class="slide">
+                            <img src="images/slide01.jpg" alt="" />
+                        </div>
+                        <div class="slide">
+                            <img src="images/slide02.jpg" alt="" />
+                        </div>
+                        <div class="slide">
+                            <img src="images/slide03.jpg" alt="" />
+                        </div>
+                        <div class="slide">
+                            <img src="images/slide04.jpg" alt="" />
+                        </div>
+                    </div>
+                </div>
+                <span class="nav-next"></span>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Three -->
+    <section id="three" class="wrapper style1">
+        <header class="major">
+            <h2>Новости</h2>
+            <p>Здесь вы можете посмотреть новости сообщества.</p>
+        </header>
+        <div class="container">
+            <section id="content">
+                <% for (var i = 0; i < blogposts.length; i++) { %>
+                <div class="post-preview">
+                    <a href="/post/<%- blogposts[i]._id %>">
+                        <h2 class="post-title">
+                            <%- blogposts[i].title %>
+                        </h2>
+                        <h3 class="post-subtitle">
+                            <%- blogposts[i].body %>
+                        </h3>
+                    </a>
+                    <p class="post-meta">Posted by
+                        <a href="#"><%- blogposts[i].userid.username %></a>
+                        on <%- blogposts[i].datePosted.toDateString() %>
+                    </p>
+                </div>
+                <hr>
+                <% } %>
+                <!-- Pager -->
+                <div class="clearfix">
+                    <a class="" href="#">Older Posts &rarr;</a>
+                </div>
+            </section>
+        </div>
+    </section>
+
+    <%- include('layouts/footer'); -%>
+
+</body>
+
+</html>

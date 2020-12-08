@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Login</title>
+<%- include('layouts/header'); -%>
+
+<body>
+
+    <%- include('layouts/navbar'); -%>
+
+    <!-- Main -->
+    <section id="main" class="wrapper style1">
+        <header class="major">
+            <h2>Вход</h2>
+            <p>Пожалуйста введите свой имя и пароль для входа</p>
+        </header>
+        <div class="container">
+
+            <!-- Content -->
+            <section id="content">
+                <!-- for browser to know tha tthe form contains mutli media. will encripy multie media and send to server -->
+                <form action="/users/login" method="POST" enctype="multipart/form-data">
+                    <label>User Name</label>
+                    <input type="text" class="form-control" placeholder="User Name" id="username" name="username">
+                    <label>Password</label>
+                    <input type="password" class="form-control" placeholder="Password" id="password" name="password">
+                    <br>
+                    <button type="submit" class="submitinput">Войти</button>
+                </form>
+            </section>
+        </div>
+    </section>
+    <%- include('layouts/footer'); -%>
+</body>
+
+</html>
